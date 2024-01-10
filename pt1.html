@@ -1,0 +1,646 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Programming Technique I</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/codestyle.css" />
+		<link rel="stylesheet" href="assets/css/prism.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Najma's</strong> <span>Portfolio</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="ds.html">Discrete Structure</a></li>
+							<li><a href="pt1.html">Programming Technique I</a></li>
+							<li><a href="tis.html">Technology and Information System</a></li>
+							<li><a href="dl.html">Digital Logic</a></li>
+							<li><a href="iac.html">Integrity and Anti-Corruption</a></li>
+						</ul>
+						<!-- <ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul> -->
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>SECJ1013 - Programming Technique I</h1>
+									</header>
+									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+									<div class="row">
+									<div class="col-6 col-12-small">
+                  <h2>Course Information</h2>
+									<p>As a fundamental subject, this 
+										course equips the students with theory and practice on problem solving techniques by using the structured approach.
+										 Students are required to develop programs using C++ programming language, in order to solve simple to moderate problems. 
+										 The course covers the following: pre-processor directives, constants and variables, data types, input and output statements,
+										  control structures: sequential, selection and loop, built-in and user-defined functions, single and two dimensional arrays, 
+											file operations, pointers, and structured data types.</p>
+												</div>
+												<div class="col-6 col-12-small">
+									<h2>Course Outline</h2>
+											<ul class="alt">
+												<li>CHAPTER 1: PROGRAMMING PROBLEM-SOLVING</li>
+												<li>CHAPTER 2: ELEMENTARY PROGRAMMING</li>
+												<li>CHAPTER 3: CONTROL STRUCTURES</li>
+                        <li>CHAPTER 4: FUNCTIONS</li>
+                        <li>CHAPTER 5: ARRAY</li>
+												<li>CHAPTER 6: INPUT AND OUTPUT</li>
+												<li>CHAPTER 7: POINTERS</li>
+												<li>CHAPTER 8: STRUCTURED DATA</li>
+											</ul>
+											</div>
+										</div>
+									<h2 style="text-align:center;">Coursework</h2>
+									<h4 style="text-align:center;padding: 20px;"><b>Lab</b></h4>
+									<div class="pdf-container">
+										<embed src="files/Lab 1 PT1.pdf">
+										<embed src="files/Lab 2 PT1.pdf">
+								  </div>
+									<div class="pdf-container">
+										<embed src="files/Lab 3 PT1.pdf">
+										<embed src="files/Lab 2 PT1.pdf">
+								  </div>
+									<h4 style="text-align:center;padding: 20px;"><b>Assignment</b></h4>
+									<div class="pdf-container">
+										<embed src="files/As1 PT1 .pdf">
+								  </div>
+
+									<div class="code-container">
+										<div class="code-wrapper">
+											<pre>
+												<code id="code" class="language-cpp">
+													/*
+													ASSIGNMENT 2 PROGRAMMING TECHNIQUE (SET 1)
+													
+													TEAM MEMBERS:
+													YASMIN BATRISYIA BINTI ZAHIRUDDIN (A23CS0201)
+													NURUL ASYIKIN BINTI KHAIRUL ANUAR (A23CS0162)
+													NAJMA SHAKIRAH BINTI SHAHRULZAMAN (A23CS0140)
+													*/
+													
+													#include &ltiostream>
+													using namespace std;
+													
+													void displayAccountInfo(string, int, double);
+													void deposit(double&, double);
+													void withdraw(double&, double);
+													
+													int main()
+													{
+															string acc_holder = "User 1";
+															int acc_num = 1013202341;
+															double acc_balance = 200;
+															char trans;
+													
+															do 
+															{
+																	cout << "<<<<< My Accounts Overview >>>>>" << endl;
+																	displayAccountInfo(acc_holder, acc_num, acc_balance);
+																	cout << endl;
+													
+																	cout << "<<<<< Deposit Transaction >>>>>" << endl;
+																	deposit(acc_balance, 500);
+																	cout << endl;
+													
+																	cout << "<<<<< Withdrawal Transaction >>>>>" << endl;
+																	withdraw(acc_balance, 200);
+																	cout << endl;
+													
+																	cout << "<<<<< My Accounts Overview >>>>>" << endl;
+																	displayAccountInfo(acc_holder, acc_num, acc_balance);
+																	cout << endl;
+													
+																	cout << "Do you want to perform another transaction? (Y/N) :";
+																	cin >> trans;
+																	cout << endl;
+															} while ( (trans != 'N' ||trans != 'n') && (trans == 'Y' || trans == 'y') ); 
+													
+															system("pause");
+															return 0;
+													}
+													
+													void displayAccountInfo(string accountName, int accountNum, double balance)
+													{
+															cout << "Account Holder Name: " << accountName << endl;
+															cout << "Account Number: " << accountNum << endl;
+															cout << "Balance: RM " << balance << endl;
+													}
+													
+													void deposit(double& balance, double deposit)
+													{
+															cout << "Deposit of RM " << deposit << " successful." << endl;
+															balance = balance + deposit;
+													}
+													
+													void withdraw(double& balance, double withdrawal)
+													{
+															if (withdrawal <= balance) 
+															{
+																	cout << "Withdrawal of RM " << withdrawal << " successful." << endl;
+																	balance = balance - withdrawal;
+															}
+															else 
+															{
+																	cout << "Insufficient funds for withdrawal" << endl;
+															}
+													}
+												</code>
+											</pre>
+											<button id="copy-button">Copy</button>
+										</div>
+									</div>
+
+									<div class="code-container">
+										<div class="code-wrapper">
+											<pre>
+												<code id="code" class="language-cpp">
+														/*
+														ASSIGNMENT 2 PROGRAMMING TECHNIQUE (SET 2)
+
+														TEAM MEMBERS:
+														YASMIN BATRISYIA BINTI ZAHIRUDDIN (A23CS0201)
+														NURUL ASYIKIN BINTI KHAIRUL ANUAR (A23CS0162)
+														NAJMA SHAKIRAH BINTI SHAHRULZAMAN (A23CS0140)
+														*/
+
+														#include &ltiostream>
+														using namespace std; 
+
+														int main (){
+
+																int number;
+
+																cout<<"Welcome to the Food Ordering System"&lt&ltendl;
+																cout<<"1. Pizza - $10"&lt&ltendl;
+																cout<<"2. Burger - $5"&lt&ltendl;
+																cout<<"3. Sandwich - $7"&lt&ltendl;
+																
+																cout<<"Enter the number of the item you want to order: ";
+																cin>>number; 
+
+																switch (number){
+																		case 1 : cout<<"Your total bill is: $10"&lt&ltendl;
+																						break;
+																		case 2 : cout<<"Your total bill is: $5"&lt&ltendl;
+																						break;
+																		case 3 : cout<<"Your total bill is: $7"&lt&ltendl;
+																						break;
+																		default : cout<<" "&lt&ltendl;
+																}
+
+														system("pause");
+														return 0;
+													}
+												</code>
+											</pre>
+											<button id="copy-button">Copy</button>
+										</div>
+									</div>
+
+									<div class="code-container">
+										<div class="code-wrapper">
+											<pre>
+												<code id="code" class="language-cpp">
+													/*
+														ASSIGNMENT 3 PROGRAMMING TECHNIQUE (SET 1)
+
+														TEAM MEMBERS:
+														YASMIN BATRISYIA BINTI ZAHIRUDDIN (A23CS0201)
+														NURUL ASYIKIN BINTI KHAIRUL ANUAR (A23CS0162)
+														NAJMA SHAKIRAH BINTI SHAHRULZAMAN (A23CS0140)
+														*/
+
+													#include&ltiostream>
+														using namespace std;
+														
+														//function prototypes
+														void displayMainMenu();
+														void addBook(string[], string[], int[], int&);
+														void displayLibrary(string[], string[], int[], int);
+														void searchByTitle(string[], string[], int[], int);
+														
+														const int MAX_BOOKS = 100;
+														
+														int main()
+														{
+																string bookTitle[MAX_BOOKS], bookAuthor[MAX_BOOKS];//arrays to keep book title,author entered by user
+																int pubYear[MAX_BOOKS];//array to keep publication year of book entered by user
+															int choice;//for user to choose between option in menu
+															int numBooks = 0;//to count number of books entered by user
+														
+																
+																do
+															{
+																		displayMainMenu();//function call to display main menu 
+																		cout << "Enter your choice: ";
+																		cin >> choice;//user's choice based on option given
+																
+																		cout <<  endl;
+														
+																		switch (choice)
+																		{
+																		case 1:
+																				if(numBooks < MAX_BOOKS)//only allow user to add books if num of max is not reached
+																				{
+																					 addBook(bookTitle, bookAuthor, pubYear, numBooks);//function call to add a book
+																					 break;	
+																	}
+																	else
+																	{
+																		cout << "Maximum books reached. Cannot add more books\n" << endl;//display message when user can't add any more books
+																		break;
+																	}
+																	
+														
+																		case 2:
+																			if(numBooks == 0)//display message if no library in system yet
+																			{
+																					cout << "No books in library." << endl << endl;
+																					break;
+																			}
+																			else
+																			{
+																					displayLibrary(bookTitle, bookAuthor, pubYear, numBooks);//function call to display all books entered by user
+																							break;		
+																			}
+																				
+														
+																		case 3:
+																				searchByTitle(bookTitle, bookAuthor, pubYear, numBooks);//function call to search book by title
+																				break;
+														
+																		case 4:
+																				cout << "Goodbye!" << endl << endl;
+																				cout << "--------------------------------";
+																				return 0;//end program once user choose option 4. Quit
+																		}
+																		
+																}while(true);
+														
+														}
+														
+														//function to display menu with options
+														void displayMainMenu()
+														{
+																cout << "<<<<&ltLibrary Management System>>>>>" << endl;
+																cout << "========================================" << endl;
+																cout << "1. Add a Book" << endl;
+																cout << "2. Display Library" << endl;
+																cout << "3. Search by Title" << endl;
+																cout << "4. Quit" << endl;
+														}
+														
+														//function for user to add and input book details
+														void addBook(string book[], string author[], int year[], int &numBooks)
+														{		
+																cin.clear();// Clear any error flags
+																	cin.ignore();  // Ignore newline character after reading the integer
+															 
+																	cout << "Enter book title: ";
+																	getline(cin, book[numBooks]);
+														
+																	cout << "Enter author name: ";
+																	getline(cin, author[numBooks]);
+														
+																	cout << "Enter publication year: ";
+																	cin >> year[numBooks];
+														
+																	cout << "\nBook added successfully!";
+																	numBooks++; //counter for each book added by user	
+																	
+															cout << "\n\n";
+															
+														}
+														
+														void displayLibrary(string book[], string author[], int year[], int numBooks)
+														{
+																cout << "Library Contents:" << endl;
+																cout << "====================" << endl;
+														
+																for (int i = 0; i < numBooks; i++)
+																{
+																		cout << "Title: " << book[i] << endl;
+																		cout << "Author: " << author[i] << endl;
+																		cout << "Year: " << year[i] << endl;
+																		cout << endl;
+																}
+														
+																cout << "\n\n";
+														}
+														
+														void searchByTitle(string book[], string author[], int year[], int numBooks)
+														{
+																string search;
+																int index = numBooks + 1;
+																
+																cin.ignore(); // Ignore newline character after reading the integer
+																
+																do
+																{
+																	cout << "Enter the title to search: ";
+																	getline(cin, search);//enter book title to search
+																	
+															}while(search.empty());//repeat when enter/newline
+															
+																
+																cout << endl;
+														
+																for (int i = 0; i < MAX_BOOKS; i++)
+																{
+																		if (search == book[i])//search all books in array until found the same title 
+																		{
+																				index = i; //assign index of book found with same title
+																				break;
+																		}
+																}
+														
+																if (index == numBooks + 1) //if no book is found after searching all books in program, display message
+																{
+																		cout << "Book is not found!";
+																}
+																else
+																{
+																		cout << "Book found:" << endl;
+																		cout << "====================" << endl;
+																		cout << "Title: " << book[index] << endl;
+																		cout << "Author: " << author[index] << endl;
+																		cout << "Year: " << year[index] << endl;
+																		cout << "Index book found: " << index;
+																}
+																
+																cout << "\n\n";
+														}
+														
+												</code>
+											</pre>
+											<button id="copy-button">Copy</button>
+										</div>
+									</div>
+									
+									<div class="code-container">
+										<div class="code-wrapper">
+											<pre>
+												<code id="code" class="language-cpp">
+													/*
+														ASSIGNMENT 3 PROGRAMMING TECHNIQUE (SET 2)
+
+														TEAM MEMBERS:
+														YASMIN BATRISYIA BINTI ZAHIRUDDIN (A23CS0201)
+														NURUL ASYIKIN BINTI KHAIRUL ANUAR (A23CS0162)
+														NAJMA SHAKIRAH BINTI SHAHRULZAMAN (A23CS0140)
+														*/
+													#include&ltiostream>
+														using namespace std;
+														
+														int multiplyUsingAddition(int , int );
+														void displayMainMenu();
+														void performMultiplication(int[], int[], int &);
+														void displayResults(int[] ,int[], int);
+														
+														int main()
+														{
+															const int MAX_OPERATIONS = 100; //can handle 100 operations
+															int operands1[MAX_OPERATIONS];// array declaration for number or operands for each operations
+															int results[MAX_OPERATIONS];// array declaration for the results of each operation
+															int operationCount = 0;//to count number of operation every time user perform multiplication
+															int choice;//for user to choose between option in menu
+															
+															do
+															{
+																displayMainMenu();//display options
+																cout << "Enter your choice: ";//ask user which option they choose
+																cin >> choice;
+																cout << endl;
+																
+															
+																switch(choice)//determine which function to execute based on choice
+																{
+																	case 1: if(operationCount < MAX_OPERATIONS)//allow user to perform multiplication until num of max operation reached.
+																			{
+																					performMultiplication(operands1,results,operationCount);
+																					break;
+																			}
+																			else
+																			{
+																					cout << "Maximum number of operations reached!"//message if user has reach max operations already
+																						 << "Cannot perform another multiplication" << endl << endl;
+																					break;		
+																			}
+															
+																	case 2: if(operationCount == 0)//display message if no operation in system yet
+																			{
+																					cout << "No operation in system." << endl << endl;
+																					break;
+																			}
+																			else
+																			{
+																					displayResults(operands1,results,operationCount);
+																				break;		
+																			}
+																	
+																	
+																	case 3:	cout << "Goodbye!" << endl << endl;
+																			cout << "--------------------------------";
+																			return 0;// end program once user chooses option 3 (Quit)
+																			break;
+																}
+														
+															}while(true);
+															
+																
+														}
+														
+														int multiplyUsingAddition(int a, int b)
+														{
+															int result = 0;//declare and initialize result with 0
+															
+															for(int i = 1; i <= b; i++)//repeat addition b times(if 4*5, then 4+4+4+4+4)
+															{
+																result += a;
+															}
+															return result;
+														}
+														
+														void displayMainMenu()//display options
+														{
+															cout << "<<<<&ltMain Menu>>>>>" << endl;
+															cout << "=============================" << endl;
+															cout << "1. Perform Multiplication" << endl;
+															cout << "2. Display Results" << endl;
+															cout << "3. Quit" << endl;
+														}
+														
+														void performMultiplication(int operands1[], int results[], int &operationCount)
+														{
+															int a,b;
+															
+															cout << "Enter the number of operands for multiplication: ";
+															cin >> operands1[operationCount];
+															
+															for(int i = 1; i <= operands1[operationCount]; i++)
+															{
+																if(i == 1)//initializing first a with first operand
+																{
+																	cout << "Enter operand " << i << ": ";
+																	cin >> a;	
+																}
+																else
+																{
+																	cout << "Enter operand " << i << ": ";
+																	cin >> b;
+																	
+																	a = multiplyUsingAddition(a, b);//repeat calculate until entered num of operands reached
+																}
+																
+															}
+															
+															results[operationCount] = a;//keeping result in array
+															
+															cout << "\nMultiplication performed successfully!\n" << endl;
+															
+															operationCount++;//counter for each operation done
+														}
+														
+														void displayResults(int operands1[], int results[], int operationCount)
+														{
+															cout << "Results of Mathematical Operations: " << endl;
+															cout << "========================================" << endl;
+															
+															for(int i = 0; i < operationCount; i++)
+															{
+																cout <<	"Operation " << i+1 << ": " << results[i] 
+																		 << " (Operands: " << operands1[i] << ")" << endl;
+															} 
+														
+															cout << endl << endl;
+														
+														}
+														
+												</code>
+											</pre>
+											<button id="copy-button">Copy</button>
+										</div>
+									</div>
+								
+								<!-- <embed src= "files/As1 PT1 .pdf" width="800"height="500">  -->
+
+									<h2 style = "padding-top: 50px;">Reflection</h2>
+													<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis.</blockquote>
+
+                </div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+					<!-- <section id="contact">
+						<div class="inner">
+							<section>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="6"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Clear" /></li>
+									</ul>
+								</form>
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="#">information@untitled.tld</a>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-phone"></span>
+										<h3>Phone</h3>
+										<span>(000) 000-0000 x12387</span>
+									</div>
+								</section>
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-home"></span>
+										<h3>Address</h3>
+										<span>1234 Somewhere Road #5432<br />
+										Nashville, TN 00000<br />
+										United States of America</span>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section> -->
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/codemain.js"></script>
+			<script src="assets/js/prism.js"></script>
+
+
+	</body>
+</html>
