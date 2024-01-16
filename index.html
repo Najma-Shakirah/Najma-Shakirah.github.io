@@ -11,6 +11,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#element {
+					font-family: "Source Sans Pro", Helvetica, sans-serif; /* Change the font family */
+					font-size: 50px; /* Set the font size */
+					color: #faf8f8; /* Set the text color */
+					font-weight: bold; /* Set the font weight */
+					/* Add any other styling you want */
+			}
+	</style>
+		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -42,15 +52,27 @@
 							<li><a href="#" class="button fit">Log In</a></li>
 						</ul> -->
 					</nav>
+					 
+ 
 
 				<!-- Banner -->
 					<section id="banner" class="major">
 						<div class="inner">
-							<header class="major">
+							<span id="element">
+								<script>
+									var typed = new Typed('#element', {
+										strings: ['Hi, Im Najma', 'a data engineering student at UTM', 'Nice to meet you!'],
+										typeSpeed: 50,
+									});
+								</script>
+							<!-- <header class="major">
 								<h1>Hi, I'm Najma ^^</h1>
-							</header>
+							</header> -->
+						</span>
 							<div class="content">
-								<p>Welcome to my portfolio website! I'm a data engineering student currently studying in Universiti Teknologi Malaysia</p>
+								<p>Welcome to my portfolio website! This portfolio contains all my courseworks, summary and reflection of every 
+									subject during my 1st semester at UTM.
+								</p>
 								<ul class="actions">
 									<li><a href="#one" class="button next scrolly">Look at my works!</a></li>
 								</ul>
@@ -215,6 +237,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
 
 	</body>
 </html>
