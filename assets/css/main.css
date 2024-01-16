@@ -2194,10 +2194,14 @@ input, select, textarea {
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+			
 		}
 
 			.image.fit img {
 				width: 100%;
+				object-fit: cover;
+				height: 400px;
+
 			}
 
 		.image.main {
@@ -3985,5 +3989,50 @@ input, select, textarea {
 		padding: 20px;
 		overflow: auto; /* This makes the container scrollable */
 		max-height: 300px; /* Adjust the max height as needed */
+}
+
+.card-img-top
+{
+	height: 250px;
+	object-fit: cover;
+	border-radius: 50px;
+	padding: 20px;
+}
+
+
+.card
+{
+	border-radius: 30px;
+	color: #ccc;
+	/* inner glow 👇 */
+	box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+	100%, 0.075),
+	/* shadow ring 👇 */
+	0 0 0 1px hsla(0, 0%, 0%, 0.05),
+	/* multiple soft shadows 👇 */
+	0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+	0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+	0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+	background-color: hsl(238, 22%, 28%);
+}
+
+.card-body
+{
+	padding:  25px;
+	margin-top: -15px;
+}
+
+.btn-primary
+{
+	font-size: medium;
+	border-radius: 25px;
+	width: 120px;
+}
+
+
+
+.btn-primary:hover{
+	background-color: rgb(53, 50, 79);
+	box-shadow: none;
 }
 
