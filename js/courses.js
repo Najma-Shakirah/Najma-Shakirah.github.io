@@ -508,21 +508,17 @@ class CoursesPortfolio {
                         <h2>Overall Reflection</h2>
                         <blockquote>
                             ${this.escapeHtml(course.reflection || 'Personal reflection for this course will be added soon.')}
-                            <footer>— Personal reflection, ${this.escapeHtml(course.title)}</footer>
+                             
                         </blockquote>
                     </section>
 
                     <section id="improvements">
-                        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Improvements & Future Action Plan</h2>
+                        <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Future Improvements</h2>
                         <div class="improvement-grid">
                             <div class="improvement-card">
-                                <h3>Areas for Development</h3>
                                 <ul>${improvements.map(item => `<li>${this.escapeHtml(item)}</li>`).join('')}</ul>
                             </div>
-                            <div class="improvement-card">
-                                <h3>Next Steps</h3>
-                                <ul>${actionPlan.map(item => `<li>${this.escapeHtml(item)}</li>`).join('')}</ul>
-                            </div>
+                            
                         </div>
                     </section>
                 </div>
